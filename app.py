@@ -1,6 +1,9 @@
 from datetime import datetime
+
 from flask import Flask, render_template, request
+
 from flask_sqlalchemy import SQLAlchemy
+
 from flask_migrate import Migrate, migrate
 
 
@@ -38,7 +41,7 @@ class Contact(db.Model):
 
 
 def get_projects():
-    api_url = f'https://api.github.com/users/dmdhrumilmistry/repos'
+    api_url = f'https://api.github.com/users/IngJhonatanM/repos'
     cards_list = requests.get(api_url).json()
     return cards_list
 
@@ -55,7 +58,7 @@ def err_404(message):
 
 @app.route('/')
 def main_page():
-    return render_template('index.html', title='Dhrumil Mistry - Homepage')
+    return render_template('index.html', title='Engineer Jhonatan M - Home')
 
 
 @app.route('/home')
